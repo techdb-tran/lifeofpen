@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/lifeofpen/static/css/main.fcc54880.css",
+    "main.js": "/lifeofpen/static/js/main.a98b7ab9.js",
+    "static/js/787.ed8aa9b8.chunk.js": "/lifeofpen/static/js/787.ed8aa9b8.chunk.js",
+    "index.html": "/lifeofpen/index.html",
+    "main.fcc54880.css.map": "/lifeofpen/static/css/main.fcc54880.css.map",
+    "main.a98b7ab9.js.map": "/lifeofpen/static/js/main.a98b7ab9.js.map",
+    "787.ed8aa9b8.chunk.js.map": "/lifeofpen/static/js/787.ed8aa9b8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fcc54880.css",
+    "static/js/main.a98b7ab9.js"
+  ]
+}
