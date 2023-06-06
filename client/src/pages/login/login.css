@@ -1,0 +1,52 @@
+.login{
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(255,255,255,0.5),
+    rgba(255,255,255,0.5)
+    ), url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/33/fa/e6/alaska.jpg?w=700&h=500&s=1');
+    background-size: cover;
+}
+.loginTitle{
+    font-size: 50px;
+}
+.loginForm{
+    width: 300px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.loginForm>label{
+    margin: 10px 0;
+}
+.loginInput{
+    padding: 10px;
+    background-color: white;
+    border: none;
+}
+.loginButton{
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: lightcoral;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+.loginButton:disabled{
+    cursor: not-allowed;
+    background-color: rgb(29, 12, 6);
+}
+.loginRegisterButton{
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: teal;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+}
