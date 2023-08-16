@@ -18,17 +18,19 @@ const bcrypt = require('bcrypt')
     }
  });
  //LOGIN
-router.post("/login", async(req, res)=>{
-    try{
-         const user = await User.findOne({username: req.body.username})
-         !user && res.status(400).json("Wrong credentials!")
-         const validate = await bcrypt.compare(req.body.password, user.password)
-         !validate && res.status(400).json("Wrong credentials!")
-        const {password, ...others} = user._doc;
-        res.status(200).json(others)
-    }catch(err){
-        res.status(500).json(err)
+ router.post("/login", async (req, res) => {
+    try {
+      const user = await User.findOne({ username: req.body.username });
+      if (!user) return res.status(400).json("Wrong credentials!");
+  
+      const validate = await bcrypt.compare(req.body.password, user.password);
+      if (!validate) return res.status(400).json("Wrong credentials!");
+  
+      const { password, ...others } = user._doc;
+      res.status(200).json(others);
+    } catch (err) {
+      res.status(500).json(err);
     }
-})
+  });
 
  module.exports = router

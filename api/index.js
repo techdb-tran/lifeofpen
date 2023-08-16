@@ -16,7 +16,16 @@ app.use(express.json());
 app.use("/images", express.static(path.join(__dirname,"/images")));
 
 mongoose
-.connect(process.env.MONG0_URL).then(console.log("Connected")).catch(err=> console.log(err));
+.connect(process.env.MONG0_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => {
+  console.log("Connected to MongoDB");
+})
+.catch((err) => {
+  console.error("Error connecting to MongoDB:", err);
+});
 
 const storage = multer.diskStorage({
     destination:(req, file,cb)=>{

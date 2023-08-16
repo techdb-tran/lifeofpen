@@ -12,12 +12,9 @@
   },
   "name": "lifeofpen",
   "version": "1.0.0",
-  "homepage": "https://techdb-tran.github.io/lifeofpen/",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "start": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
