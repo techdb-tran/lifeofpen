@@ -13,7 +13,7 @@ const cors = require('cors');
 dotenv.config();
 app.use(cors(
   {
-    origin: ["https://lifeofpen-blog.vercel.app/"],
+    origin: ["https://lifeofpen-blog-10jusuvar-kiddanbonggg-gmailcom.vercel.app/"],
     methods:["POST","GET"],
     credentials: true
   }
