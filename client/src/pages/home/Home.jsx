@@ -18,12 +18,11 @@ export default function Home() {
   },[search])
   return (
   <>
-    Hello world
-{/*    <Header/>
+   <Header/>
    <div className='home'>
       <Posts posts={posts}/>
       <Sidebar/>
-    </div> */}
+    </div>
   </> 
   )
 }
