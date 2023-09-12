@@ -13,20 +13,21 @@ import { Context } from './context/Context';
 function App() {
   const {user} = useContext(Context);
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<TopBar/>}>
-        <Route index element={<Home/>}/>
-        <Route path='/about' element={<Sidebar/>}/>
-        <Route path='/contact' element={<Sidebar/>}/>
-        <Route path='/write' element={user?<Write/>:<Register/>}/>
-        <Route path='/login' element={user?<Home/>:<Login/>}/>
-        <Route path='/register' element={user?<Home/>:<Register/>}/>
-        <Route path='/post/:postId' element={<SinglePost/>}/>
-        <Route path='/settings' element={user?<Settings/>:<Register/>}/>
-        </Route> 
-      </Routes>
-    </BrowserRouter>
+    <>Hello Wolrd</>
+    // <BrowserRouter>
+    //   <Routes>
+    //     <Route path='/' element={<TopBar/>}>
+    //     <Route index element={<Home/>}/>
+    //     <Route path='/about' element={<Sidebar/>}/>
+    //     <Route path='/contact' element={<Sidebar/>}/>
+    //     <Route path='/write' element={user?<Write/>:<Register/>}/>
+    //     <Route path='/login' element={user?<Home/>:<Login/>}/>
+    //     <Route path='/register' element={user?<Home/>:<Register/>}/>
+    //     <Route path='/post/:postId' element={<SinglePost/>}/>
+    //     <Route path='/settings' element={user?<Settings/>:<Register/>}/>
+    //     </Route> 
+    //   </Routes>
+    // </BrowserRouter>
   );
 }
 
