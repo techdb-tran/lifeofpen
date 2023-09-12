@@ -13,12 +13,12 @@ export default function Register() {
     e.preventDefault();
     setError(false);
     try{
-      const res = await axios.post("/auth/register",{
+      const res = await axios.post("https://lifeofpen-blog-10jusuvar-kiddanbonggg-gmailcom.vercel.app/auth/register",{
         username,
         email,
         password
       });
-      res.data && window.location.replace("/login");
+      res.data && window.location.replace("https://lifeofpen-blog-10jusuvar-kiddanbonggg-gmailcom.vercel.app/login");
     }catch(err){
        setError(true)
     }
