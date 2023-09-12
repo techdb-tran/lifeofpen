@@ -13,7 +13,7 @@ const cors = require('cors');
 dotenv.config();
 app.use(cors(
   {
-    origin: ["https://lifeofpen-blog.vercel.app"],
+    origin: ["https://lifeofpen-blog.vercel.app/"],
     methods:["POST","GET"],
     credentials: true
   }
@@ -41,6 +41,9 @@ const storage = multer.diskStorage({
         cb(null,req.body.name);
     }
 });
+app.get("/",(req,res)=>{
+  res.json("Hello");
+})
 const upload = multer({storage:storage});
 app.post("/api/upload", upload.single("file"),(req,res)=>{
     res.status(200).json("File has been uploaded");
