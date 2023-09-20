@@ -22,7 +22,7 @@ app.use(express.json());
 app.get("/", (req,res)=>{
     res.json("Hello");
 });
-app.use("https://lifeofpen-api.vercel.app/images", express.static(path.join(__dirname,"/images")));
+app.use("/images", express.static(path.join(__dirname,"/images")));
 
 mongoose
 .connect(process.env.MONG0_URL, {
@@ -48,10 +48,10 @@ const upload = multer({storage:storage});
 app.post("/upload", upload.single("file"),(req,res)=>{
     res.status(200).json("File has been uploaded");
 })
-app.use("https://lifeofpen-api.vercel.app/auth", authRoute);
-app.use("https://lifeofpen-api.vercel.app/users", userRoute);
-app.use("https://lifeofpen-api.vercel.app/posts", postRoute);
-app.use("https://lifeofpen-api.vercel.app/categories", categoryRoute);
+app.use("/auth", authRoute);
+app.use("/users", userRoute);
+app.use("/posts", postRoute);
+app.use("/categories", categoryRoute);
 
 app.listen("5000",()=>{
     console.log("Backend is running.")
