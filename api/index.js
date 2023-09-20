@@ -19,6 +19,9 @@ app.use(cors(
   }
 ));
 app.use(express.json());
+app.get("/", (req,res)=>{
+    res.json("Hello");
+});
 app.use("/images", express.static(path.join(__dirname,"/images")));
 
 mongoose
@@ -44,9 +47,6 @@ const storage = multer.diskStorage({
 const upload = multer({storage:storage});
 app.post("/api/upload", upload.single("file"),(req,res)=>{
     res.status(200).json("File has been uploaded");
-})
-app.get("/", (req,res)=>{
-    res.json("Hello");
 })
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
