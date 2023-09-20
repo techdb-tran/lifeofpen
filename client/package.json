@@ -41,5 +41,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://lifeofpen-api.vercel.app/"
+  "proxy": "https://lifeofpen-api.vercel.app/api/"
 }
