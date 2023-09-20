@@ -11,8 +11,17 @@ const path = require("path");
 const cors = require('cors');
 
 dotenv.config();
-app.use(cors());
+app.use(cors(
+  {
+    origin: ["https://lifeofpen-client.vercel.app/"],
+    methods:["POST","GET","PATCH","DELETE"],
+    credentials: true
+  }
+));
 app.use(express.json());
+app.get("/", (req,res)=>{
+    res.json("Hello");
+});
 app.use("/images", express.static(path.join(__dirname,"/images")));
 
 mongoose
