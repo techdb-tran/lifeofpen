@@ -8,7 +8,7 @@ export default function SinglePost() {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
   const [post, setPost] = useState({})
-  const PF = "http://localhost:5000/images/";
+  const PF = "https://lifeofpen-api.vercel.app/images/";
   const { user } = useContext(Context);
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
@@ -24,7 +24,7 @@ export default function SinglePost() {
   }, [path]);
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/posts/${post._id}`, {
+      await axios.delete(`https://lifeofpen-api.vercel.app/posts/${post._id}`, {
         data: { username: user.username },
       });
       window.location.replace("/")
