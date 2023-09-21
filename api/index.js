@@ -50,7 +50,7 @@ const upload = multer({storage:storage});
 app.post("/upload", upload.single("file"),(req,res)=>{
     res.status(200).json("File has been uploaded");
 })
-app.get("/posts/", async(req, res)=>{
+app.get("/posts", async(req, res)=>{
     const username = req.query.user;
     const catName = req.query.cat;
     try{
