@@ -9,8 +9,8 @@ const categoryRoute = require("./routes/categories");
 const multer = require("multer");
 const path = require("path");
 const cors = require('cors');
-const User = require("models/User");
-const Post = require("models/Post");
+const User = require("./models/User");
+const Post = require("./models/Post");
 
 dotenv.config();
 app.use(cors(
