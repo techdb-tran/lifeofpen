@@ -9,6 +9,8 @@ const categoryRoute = require("./routes/categories");
 const multer = require("multer");
 const path = require("path");
 const cors = require('cors');
+const User = require("models/User");
+const Post = require("models/Post");
 
 dotenv.config();
 app.use(cors(
@@ -22,8 +24,24 @@ app.use(express.json());
 app.get("/", (req,res)=>{
     res.json("Hello nè");
 });
-app.get("/posts", (req, res)=>{
-    res.json("post nè");
+app.get("/posts", async(req, res)=>{
+    const username = req.query.user;
+    const catName = req.query.cat;
+    try{
+        let posts;
+        if(username){
+            posts = await Post.find({username:username})
+        } else if(catName){
+            posts = await Post.find({categories:{
+                $in:[catName]
+            }})
+        } else{
+            posts = await Post.find();
+        }
+        res.status(200).json(posts);
+    }catch(err){
+        res.status(500).json(err)
+    }
   })
 app.use("/images", express.static(path.join(__dirname,"/images")));
 
