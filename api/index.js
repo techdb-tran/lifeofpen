@@ -20,8 +20,11 @@ app.use(cors(
 ));
 app.use(express.json());
 app.get("/", (req,res)=>{
-    res.json("Hello");
+    res.json("Hello cái quần què");
 });
+app.get("/posts", (req, res)=>{
+    res.json("post nè");
+  })
 app.use("/images", express.static(path.join(__dirname,"/images")));
 
 mongoose
@@ -48,9 +51,7 @@ const upload = multer({storage:storage});
 app.post("/upload", upload.single("file"),(req,res)=>{
     res.status(200).json("File has been uploaded");
 })
-app.get("/posts", (req, res)=>{
-    res.json("post nè");
-  })
+
 app.use("/auth", authRoute);
 app.use("/users", userRoute);
 app.use("/posts", postRoute);
