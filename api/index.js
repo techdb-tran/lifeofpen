@@ -20,7 +20,7 @@ app.use(cors(
 ));
 app.use(express.json());
 app.get("/", (req,res)=>{
-    res.json("Hello cái quần què");
+    res.json("Hello nè");
 });
 app.get("/posts", (req, res)=>{
     res.json("post nè");
